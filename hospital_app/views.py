@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Doctor,Patient, Appointment
+from .forms import DoctorForm
 # Create your views here.
 
 def index(reuest):
@@ -29,3 +30,19 @@ def appointment(request):
     data = Appointment.objects.all()
     return render(request, 'appointment.html', {'context':data})
 
+
+def create_doctor(request):
+    if request.method == 'POST':
+        form = DoctorForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    else:
+        form = DoctorForm()
+        return render(request, 'creat_doctor.html', {'form': form})    
+    
+def edit_doctor(request, id_doctor):
+        pass
+
+def delete_doctor(request, id_doctor):
+        pass
