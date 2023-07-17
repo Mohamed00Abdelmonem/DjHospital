@@ -18,10 +18,13 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-
+from hospital_app.views import list_doctors, detail_doctor,list_patients, detail_patient
 urlpatterns = [
     path('admin/', admin.site.urls),
-    
+    path('doctors/', list_doctors),
+    path('doctors/<int:id_doctor>', detail_doctor),
+    path('patients/', list_patients),
+    path('patients/<int:id_patient>', detail_patient),
 
 
 ]
