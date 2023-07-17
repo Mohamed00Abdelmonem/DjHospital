@@ -36,9 +36,9 @@ urlpatterns = [
     path('patients/<int:id_patient>/edit_patient/', edit_patinet),
     path('patients/<int:id_patient>/delete_patient/', delete_patient),
     # crud operation to Appointment
-    path('appointments/create_appointments/',create_appointments),
-    path('appointments/<int:id_appointment>/edit_appointments/', edit_appointments),
-    path('appointments/<int:id_appointment>/delete_appointments/', delete_appointments),
+    path('appointment/create_appointment/',create_appointments),
+    path('appointment/<int:id_appointment>/edit_appointment/', edit_appointments),
+    path('appointment/<int:id_appointment>/delete_appointment/', delete_appointments),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

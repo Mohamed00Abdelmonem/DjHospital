@@ -93,7 +93,7 @@
 </head>
 
 <body>
-    <h1>Doctors List</h1>
+    <h1>Patients List</h1>
     <a href="create_patient">
         <button class="add-doctor-btn">
             <i class="fas fa-plus-circle"></i> Add Patient
@@ -114,7 +114,7 @@
 
                 <td>{{ patient.id }}</td>
                 <td><a href="{{patient.id}}">{{ patient.FirstName }}</a></td>
-                <td>{{ doctor.ContactNumber }}</td>
+                <td>{{ patient.ContactNumber }}</td>
                 <td class="actions">
                     <a href='{{patient.id}}/edit_patient'
                         onclick="return confirm('Are you sure you want to edit this doctor?')">

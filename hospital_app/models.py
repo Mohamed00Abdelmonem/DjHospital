@@ -5,7 +5,7 @@ from django.db import models
 class Patient(models.Model):
     FirstName = models.CharField(max_length=100)
     LastName = models.CharField(max_length=100)
-    DateOfBirth = models.DateField()
+    DateOfBirth = models.DateField(default='yy-mm-dd')
     Gender = models.CharField(max_length=3,choices=[('F',"Female"),('M',"Male")],default='M')
     Address = models.TextField()
     ContactNumber = models.CharField(max_length=20)
@@ -51,9 +51,9 @@ class Doctor(models.Model):
 class Appointment(models.Model):
     PatientID = models.ForeignKey(Patient, on_delete=models.SET_NULL, null= True)
     DoctorID  = models.ForeignKey(Doctor, on_delete=models.SET_NULL, null= True)
-    AppointmentDate = models.DateField()
-    StartTime = models.TimeField()
-    EndTime  = models.TimeField()
+    AppointmentDate = models.DateField(default='yy-mm-dd')
+    StartTime = models.TimeField(default='00:00:00')
+    EndTime  = models.TimeField(default='00:00:00')
 
     def __str__(self) -> str:
         return self.AppointmentDate.strftime("%Y-%m-%d")
