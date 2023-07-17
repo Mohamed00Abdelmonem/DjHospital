@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from hospital_app.views import list_doctors, detail_doctor,list_patients, detail_patient, appointment,index, create_doctor,edit_doctor,delete_doctor,create_patient,edit_patinet,delete_patient
+from hospital_app.views import list_doctors, detail_doctor,list_patients, detail_patient, appointment,index, create_doctor,edit_doctor,delete_doctor,create_patient,edit_patinet,delete_patient,create_appointments,edit_appointments,delete_appointments
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index),
@@ -27,13 +27,18 @@ urlpatterns = [
     path('patients/', list_patients),
     path('patients/<int:id_patient>', detail_patient),
     path('appointment/',appointment),
+    # crud operation to Doctor
     path('doctors/create_doctor/',create_doctor),
     path('doctors/<int:id_doctor>/edit_doctor/', edit_doctor),
     path('doctors/<int:id_doctor>/delete_doctor/', delete_doctor),
+    # crud operation to Patient
     path('patients/create_patient/',create_patient),
     path('patients/<int:id_patient>/edit_patient/', edit_patinet),
     path('patients/<int:id_patient>/delete_patient/', delete_patient),
-
+    # crud operation to Appointment
+    path('appointments/create_appointments/',create_appointments),
+    path('appointments/<int:id_appointment>/edit_appointments/', edit_appointments),
+    path('appointments/<int:id_appointment>/delete_appointments/', delete_appointments),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
