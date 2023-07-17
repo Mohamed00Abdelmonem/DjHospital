@@ -1,51 +1,142 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Patient</title>
+    <title>Doctors</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        /* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
 
-h1 {
-    text-align: center;
-}
+        h1 {
+            text-align: center;
+        }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
 
-li {
-    margin-bottom: 10px;
-}
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
 
-a {
-    display: block;
-    padding: 10px;
-    background-color: #afc6eb;
-    color: #333;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
+        th {
+            background-color: #698cd7;
+            font-weight: bold;
+            color: white;
+        }
 
-a:hover {
-    background-color: #dfd6d6;
-}
+        td.actions {
+            text-align: center;
+        }
 
+        .add-doctor-btn,
+        .edit-btn,
+        .delete-btn {
+            padding: 5px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .add-doctor-btn {
+            background-color: #667ed4;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .edit-btn {
+            background-color: #afc6eb;
+            color: #333;
+        }
+        
+
+        .delete-btn {
+            background-color: #ff9999;
+            color: #fff;
+        }
+        a {
+            text-decoration: none;
+        }
+        tbody tr:hover {
+            background-color: #909ce1;
+        }
+        
+        .go-back-btn-container {
+            text-align: right;
+            
+        }
+        .add-doctor-btn,
+        .go-back-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #6d83dc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .go-back-btn:hover {
+            background-color: #2857bc;
+        }
     </style>
 </head>
+
 <body>
-    <h1>Patient List</h1>
-    <ul>
-        {% for patient in context %}
-        <li><a href="{{patient.id}}">{{patient}}</a></li>
-        {% endfor %}
-        <!-- Add more doctor list items as needed -->
-    </ul>
+    <h1>Doctors List</h1>
+    <a href="create_patient">
+        <button class="add-doctor-btn">
+            <i class="fas fa-plus-circle"></i> Add Patient
+        </button>
+    </a>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>ContactNumber</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for patient in context %}
+            <tr>
+
+                <td>{{ patient.id }}</td>
+                <td><a href="{{patient.id}}">{{ patient.FirstName }}</a></td>
+                <td>{{ doctor.ContactNumber }}</td>
+                <td class="actions">
+                    <a href='{{patient.id}}/edit_patient'
+                        onclick="return confirm('Are you sure you want to edit this doctor?')">
+                        <i class="fas fa-edit edit-btn"></i>
+                    </a>
+                    <a href='{{patient.id}}/delete_patient'
+                        onclick="return confirm('Are you sure you want to delete this doctor?')">
+                        <i class="fas fa-trash-alt delete-btn"></i>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button class="go-back-btn" onclick="goBack()">Go Back Page</button>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </body>
+
 </html>

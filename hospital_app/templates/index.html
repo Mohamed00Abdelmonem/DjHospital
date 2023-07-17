@@ -1,4 +1,4 @@
-
+<!-- 
      <!DOCTYPE html>
 <html>
 <head>
@@ -140,7 +140,7 @@
                     <li class="dropdown">
                         <a href="#">Create <i class="fas fa-angle-down"></i></a>
                         <div class="dropdown-content">
-                            <a href="#">Doctor</a>
+                            <a href="create_doctor/">Doctor</a>
                             <a href="#">Patient</a>
                             <a href="#">Appointment</a>
                         </div>
@@ -171,4 +171,191 @@
         <p>&copy; 2023 My Hospital. All rights reserved.</p>
     </footer>
 </body>
+</html> -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Hospital</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        /* styles.css */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #6d83dc;
+            color: #fff;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+            /* Align the navbar items to the right */
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            right: 0;
+            /* Align the dropdown to the right */
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .create-link {
+            margin-left: auto;
+            /* Align the "Create" link to the right */
+        }
+
+        .create-link a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .hero {
+            background-image: url("https://images.pexels.com/photos/6129158/pexels-photo-6129158.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: #1329b5;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #6d83dc;
+            color: #eceef4;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .about {
+            background-color: #f1f1f1;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        footer {
+            background-color: #6d83dc;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+
+                <li><a href="/doctors/">Doctors</a></li>
+                <li><a href="patients/">Patients</a></li>
+                <li><a href="appointment/">Appointments</a></li>
+                <li><a href="#">Contact</a></li>
+                <li class="create-link">
+                <li class="dropdown">
+                    <a href="#">Create <i class="fas fa-angle-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href='doctors/create_doctor/'>Doctor</a>
+                        <a href="patients/create_patient/">Patient</a>
+                        <a href="#">Appointment</a>
+                    </div>
+                </li>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to My Hospital</h1>
+            <p>Providing Quality Healthcare Services</p>
+            <a href="#" class="btn">Book an Appointment</a>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="about-content">
+            <h2>About Us</h2>
+            <p>At My Hospital, we are dedicated to providing compassionate healthcare services to our community.</p>
+            <p>With a team of experienced professionals, we strive to ensure the well-being and satisfaction of our
+                patients.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 My Hospital. All rights reserved.</p>
+    </footer>
+</body>
+
 </html>

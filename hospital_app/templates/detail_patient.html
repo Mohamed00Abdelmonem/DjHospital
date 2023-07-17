@@ -1,64 +1,88 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor Profile</title>
     <style>
         /* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #6d83dc;
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #6d83dc;
+        }
 
-.profile-container {
-    width: 600px;
-    margin: 100px auto;
-    padding: 20px;
-    background-color: #f1f1f1;
-    border-radius: 20px;
-}
+        .profile-container {
+            width: 600px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 20px;
+        }
 
-h1 {
-    text-align: center;
-}
+        h1 {
+            text-align: center;
+        }
 
-.doctor-profile {
-    margin-top: 20px;
-    border: 1px solid #6d83dc;
-    padding: 10px;
-    border-radius: 5px;
-}
+        .doctor-profile {
+            margin-top: 20px;
+            border: 1px solid #6d83dc;
+            padding: 10px;
+            border-radius: 5px;
+        }
 
-h2 {
-    margin-bottom: 10px;
-}
+        h2 {
+            margin-bottom: 10px;
+        }
 
-strong {
-    font-weight: bold;
-}
+        strong {
+            font-weight: bold;
+        }
+        .go-back-btn-container {
+            text-align: right;
+            
+        }
+
+        .go-back-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #6d83dc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .go-back-btn:hover {
+            background-color: #2857bc;
+        }
 
     </style>
 </head>
+
 <body>
     <div class="profile-container">
-        <h1>Patient Profile</h1>
+        <h1>Doctor Profile</h1>
 
         <div class="doctor-profile">
-            <h2>Mr. {{context.FirstName}} {{context.LastName}}</h2>
-            
+            <h2>Dr. {{context.FirstName}} {{context.LastName}}</h2>
             <p><strong>Gender:</strong> {{context.Gender}}</p>
-            <p><strong>DateOfBirth:</strong> {{context.DateOfBirth}}</p>
+            <p><strong>Specialty:</strong> {{context.Specialty}}</p>
             <p><strong>Contact Number:</strong> {{context.ContactNumber}}</p>
-            <p><strong>Address:</strong> {{context.Address}}</p>
             <p><strong>Email:</strong> {{context.Email}}</p>
         </div>
+        
+        <button class="go-back-btn" onclick="goBack()">Go Back Page</button>
+
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
     </div>
 </body>
-</html>
 
-
-</body>
 </html>
