@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Appointments</title>
+    <style>
+        /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead th {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: left;
+}
+
+tbody td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+tbody td:first-child {
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+    </style>
+</head>
+<body>
+    <div class="appointment-list-container">
+        <h1>Appointments</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Doctor Name</th>
+                    <th>Date</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for appointment in context %}
+                <tr>
+                    <td>{{ appointment.PatientID }}</td>
+                    <td>{{ appointment.DoctorID }}</td>
+                    <td>{{ appointment.AppointmentDate }}</td>
+                    <td>{{ appointment.StartTime }}</td>
+                    <td>{{ appointment.EndTime }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
